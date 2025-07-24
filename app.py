@@ -8,6 +8,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import LLMChain, StuffDocumentsChain
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
+from flask_cors import CORS , cross_origin
 from dotenv import load_dotenv
 
 
@@ -17,6 +18,8 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_a
 vector_store = FAISS.load_local("faiss_db", embeddings , allow_dangerous_deserialization = True)
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def get_conversational_chain():
     document_prompt = PromptTemplate(
@@ -63,4 +66,4 @@ def process_audio():
     pass   
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(host='0.0.0.0' , debug=False , port=8000)
