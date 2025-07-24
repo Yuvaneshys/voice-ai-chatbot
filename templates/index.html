@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Yuvaneswaran Bot</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Title inside the chat card -->
+      <div class="chat-title">
+        Yuvaneswaran's Assistant
+        <div class="social-icons">
+          <a
+            href="https://about.me/yuvaneswaran"
+            target="_blank"
+            title="About Me"
+          >
+            <i class="fas fa-globe"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yuvaneswaran-m-4a36a42b6"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/Yuvaneshys"
+            target="_blank"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scrollable Chat Box -->
+      <div id="chat-box">
+        <div class="message ai-msg">
+          <i class="fas fa-robot"></i>
+          <span>
+            Hello! I am Yuvaneswaran's personal AI assistant. Would you like to know more about him?
+          </span>
+        </div>
+      </div>
+
+      <!-- Input box fixed at bottom -->
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Ask a question..." />
+        <button onclick="sendText()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        <button onclick="startRecording()">
+          <i class="fas fa-microphone"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
